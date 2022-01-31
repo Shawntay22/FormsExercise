@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Survery</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Customer Experience Survey</legend>
+            <!-- Store Number -->
+            <label for="storeNumber">Store Numebr</label>
+            <select name="storeNumber" id="storeNumber">
+
+                <!-- Adding the "hidden" attribute/keyword hides the option when the dropdown is selected -->
+                <option hidden>Select a Store</option>
+                <option value="3109">3109</option>
+                <option value="1312">1312</option>
+                <option value="1532">1532</option>
+            </select>
+            <div>
+                <fieldset>
+                    <legend>When you visited:</legend>
+                    <label for="date">Date Visited</label>
+                    <!-- Adding the "min" and "max" attributes will limit the date selection to a specific range. -->
+                    <input type="date" id="date" value="2022-01-01" min="2022-01-01" max="2022-12-31">
+                    <br>
+                    <label for="time">Time</label>
+                    <input type="time" id="time" name="time">
+                </fieldset>
+            </div>
+            <label for="fullName">Full Name</label>
+            <input type="fullName" name="name" id="name" placeholder="Full Name">
+            <br>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Email">
+            <!-- <br> -->
+                <fieldset>
+                    <legend>How would you rate your level of satisfaction with you visit?</legend>
+                    <input type="radio" name="satisfied" id="satisfied">
+                    <label for="satisfied">Satisfied</label>
+                    <br>
+                    <!-- Added default selection ("checked") -->
+                    <input type="radio" name="satisfied" id="niether" checked>
+                    <label for="neither">Neither Satisfied Nor Dissatisfied</label>
+                    <br>
+                    <input type="radio" name="satisfied" id="dissatisfied">
+                    <label for="dissatisfied">Dissatisfied</label>
+
+                </fieldset>
+                <label for="experience">Tell us about your experience:</label>
+                <br>
+                <textarea name="experience" id="experience" cols="20" rows="10"></textarea>
+                <br>
+                <label for="times">Times you visited last month:</label>
+                <br>
+                <!-- Added range 1-30 with "min" and "max" attributes-->
+                <input type="number" name="times" id="times" min="1" max="30">
+                <br>
+                <!-- Added checkbox requirement; requirement will Not allow the form to be submitted unless checked. -->
+                <input type="checkbox" name="contacted" id="contacted" required>
+                <label for="contacted">Please check the box is you would like to be contacted about your experience</label>
+                <br>
+                <label for="password">Password</label>
+                <!-- You can use the pattern attribute in replace of the "min", "max", and "required attribute" -->
+                <input type="password" name="password" id="password" min="5" max="10" pattern="{5,10" title="Please enter a password that is 5 to 10 characters in length" required>
+                <br>
+                <!-- A "reset" input clears out all the values entered/selected in a form. -->
+                <input type="reset" value="Reset the Form">
+                <input type="submit">   
+        </fieldset>
+    </form> 
+</body>
+</html>
